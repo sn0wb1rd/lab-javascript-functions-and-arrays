@@ -28,18 +28,48 @@ function findLongestWord (coffee) {
   return word;
 };
 
-
-
 // Iteration #3: Calculate the sum
-
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers (arryNumbers) {
+  let sum = 0;
+  for (let i = 0; i < arryNumbers.length; i++) {
+    sum = sum + arryNumbers[i];
+    //return `sum ${sum}`
+
+  };
+  return sum
+};
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function averageNumbers (arrayNumbers){
+  if (arrayNumbers.length === 0){
+    return null    
+  } else {
+    let sum = 0;
+    let average = 0;
+    sum = sumNumbers(arrayNumbers); 
+    average = sum / arrayNumbers.length;
+    return average
+  };
+};
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength (coffee) {
+  let wordLen = 0;
+  if (coffee.length === 0) {
+    return null
+  } else {
+    for (let i = 0; i < coffee.length; i++) {      
+      wordLen = wordLen + coffee[i].length;                 
+    };
+   return wordLen/coffee.length
+  };
+};
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -56,8 +86,54 @@ const wordsUnique = [
   'bring'
 ];
 
+// function uniquifyArray (coffee) {
+//   if (coffee.length === 0) {
+//     return null
+//   }
+//   let unique = [];
+//   for (let i = 0; i < coffee.length; i++) {
+//     let found = false;
+//     for (let j = 0; j < unique.length; j++) {
+//       if (coffee[i] === unique[j]) {
+//         found = true;
+//       }
+//     }
+//     if (found === false) {
+//       unique.push(coffee[i]);
+//     }
+//   }
+//   return unique;
+// };
+
+function uniquifyArray (coffee) {
+  if (coffee.length === 0) {
+    return null
+  }
+  let unique = [];
+  for (let i = 0; i < coffee.length; i++) {
+    let found = unique.indexOf(coffee[i]);
+    if (found === -1) {
+      unique.push(coffee[i]);
+    }
+  }
+  return unique;
+};
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist  (coffee, searchWord) {
+  if (coffee.length === 0) {
+    return null
+  }
+  for (let i = 0; i < coffee.length; i++) {
+    if (coffee[i] === searchWord) {
+        return true;
+    };
+    
+  };
+  return false
+};
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -73,6 +149,18 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes  (coffee, searchWord) {
+  let amountWord = 0;
+  for (let i = 0; i < coffee.length; i++) {
+    if (coffee[i] === searchWord) {
+      amountWord ++ // amountWord = amountWord + 1
+    };
+    
+  };
+  return amountWord
+};
+
 
 // Iteration #8: Bonus
 
